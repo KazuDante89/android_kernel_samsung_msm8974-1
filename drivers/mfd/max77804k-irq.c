@@ -27,6 +27,7 @@
 #include <linux/gpio.h>
 #include <linux/mfd/max77804k.h>
 #include <linux/mfd/max77804k-private.h>
+#include <linux/battery/charger/max77804k_charger.h>
 
 static const u8 max77804k_mask_reg[] = {
 	[LED_INT] = MAX77804K_LED_REG_FLASH_INT_MASK,
