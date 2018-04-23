@@ -164,6 +164,13 @@ config CPU_FREQ_DEFAULT_GOV_KTOONSERVATIVE
 	  driver. Fallback governor will be the performance governor.  This
 	  governor adds the capability of hotpluging.
 
+config CPU_FREQ_DEFAULT_GOV_NIGHTMARE
+	bool "nightmare"
+	select CPU_FREQ_GOV_NIGHTMARE
+	help
+	  Use the CPUFreq governor 'nightmare' as default. This is
+	  based on ltoonservative with browsing detection based on GPU loading
+
 config CPU_FREQ_DEFAULT_GOV_SMARTASS2
 	bool "smartass2"
 	select CPU_FREQ_GOV_SMARTASS2
@@ -233,6 +240,11 @@ config CPU_FREQ_GOV_KTOONSERVATIVE
 	  For details, take a look at linux/Documentation/cpu-freq.
 
 	  If in doubt, say N.
+
+config CPU_FREQ_GOV_NIGHTMARE
+        tristate "'nightmare' cpufreq governor"
+        depends on CPU_FREQ
+
 
 config CPU_FREQ_GOV_PERFORMANCE
 	tristate "'performance' governor"
