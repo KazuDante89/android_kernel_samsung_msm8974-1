@@ -155,6 +155,10 @@ config CPU_FREQ_DEFAULT_GOV_SMARTASS2
 	bool "smartass2"
 	select CPU_FREQ_GOV_SMARTASS2
 
+config CPU_FREQ_DEFAULT_GOV_SMARTASSH3
+	bool "smartassh3"
+	select CPU_FREQ_GOV_SMARTASSH3
+
 config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
             bool "intellidemand"
             select CPU_FREQ_GOV_INTELLIDEMAND
@@ -362,6 +366,10 @@ config CPUFREQ_LIMIT_MAX_FREQ
 
 config CPU_FREQ_GOV_SMARTASS2
         tristate "'smartass2' cpufreq governor"
+        depends on CPU_FREQ
+
+config CPU_FREQ_GOV_SMARTASSH3
+        tristate "'smartassh3' cpufreq governor"
         depends on CPU_FREQ
 
 config CPU_FREQ_GOV_PEGASUSQ
