@@ -23,6 +23,14 @@
 
 #include "power.h"
 
+struct wake_lock main_wake_lock;
+#ifdef CONFIG_POWERSUSPEND
+extern
+#endif
+struct workqueue_struct *suspend_work_queue;
+
+suspend_state_t requested_suspend_state = PM_SUSPEND_MEM;
+
 enum {
 	DEBUG_USER_STATE = 1U << 0,
 	DEBUG_SUSPEND = 1U << 2,
