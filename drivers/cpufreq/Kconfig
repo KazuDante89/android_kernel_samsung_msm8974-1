@@ -151,6 +151,10 @@ config CPU_FREQ_DEFAULT_GOV_KTOONSERVATIVE
 	  driver. Fallback governor will be the performance governor.  This
 	  governor adds the capability of hotpluging.
 
+config CPU_FREQ_DEFAULT_GOV_SMARTASS2
+	bool "smartass2"
+	select CPU_FREQ_GOV_SMARTASS2
+
 config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
             bool "intellidemand"
             select CPU_FREQ_GOV_INTELLIDEMAND
@@ -355,6 +359,10 @@ config CPUFREQ_LIMIT_MAX_FREQ
 	depends on CPU_FREQ_GOV_INTELLIDEMAND
 	help
 		Limit Max Freq while screen is on for Intellidemand governor
+
+config CPU_FREQ_GOV_SMARTASS2
+        tristate "'smartass2' cpufreq governor"
+        depends on CPU_FREQ
 
 config CPU_FREQ_GOV_PEGASUSQ
 	tristate "'pegasusq' cpufreq policy governor"
