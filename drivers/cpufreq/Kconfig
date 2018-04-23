@@ -165,6 +165,12 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
             help
               Use the CPUFreq governor 'intellidemand' as default.
 
+config CPU_FREQ_DEFAULT_GOV_SMARTMAX
+            bool "smartmax"
+            select CPU_FREQ_GOV_SMARTMAX
+            help
+              Use the CPUFreq governor 'smartmax' as default.
+
 config CPU_FREQ_DEFAULT_GOV_PEGASUSQ
 	bool "pegasusq"
 	select CPU_FREQ_GOV_PEGASUSQ
@@ -371,6 +377,13 @@ config CPU_FREQ_GOV_SMARTASS2
 config CPU_FREQ_GOV_SMARTASSH3
         tristate "'smartassh3' cpufreq governor"
         depends on CPU_FREQ
+
+config CPU_FREQ_GOV_SMARTMAX
+           tristate "'smartmax' cpufreq governor"
+           depends on CPU_FREQ
+           help
+             smartmax' - a "smart" optimized governor!
+             If in doubt, say N.
 
 config CPU_FREQ_GOV_PEGASUSQ
 	tristate "'pegasusq' cpufreq policy governor"
